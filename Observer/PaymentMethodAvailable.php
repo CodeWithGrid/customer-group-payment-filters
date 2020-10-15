@@ -7,17 +7,12 @@ use Magento\Framework\Event\ObserverInterface;
 class PaymentMethodAvailable implements ObserverInterface
 {
     /**
-     * @var \Magento\Customer\Model\Session
-     */
-    private $customerSession;
-    /**
      * @var \Magento\Customer\Api\GroupRepositoryInterface
      */
     private $groupRepository;
 
-    public function __construct(\Magento\Customer\Model\Session $customerSession, \Magento\Customer\Api\GroupRepositoryInterface $groupRepository)
+    public function __construct(\Magento\Customer\Api\GroupRepositoryInterface $groupRepository)
     {
-        $this->customerSession = $customerSession;
         $this->groupRepository = $groupRepository;
     }
 
